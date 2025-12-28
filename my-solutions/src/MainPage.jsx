@@ -1,10 +1,9 @@
 import styles from './mainpage.module.css'
-import './mainpage.css'
 import { Link } from 'react-router-dom'
 
 function Mainpage() {
     return (
-        <>
+        <div className={styles.mainPage}>
             <div className={styles.title}>
                 <h1>Hello! Fancy seeing some solutions?</h1>
                 <h3>
@@ -12,9 +11,21 @@ function Mainpage() {
                     This uses react and GitHub pages for creating the websites and for hosting it on the web.
                 </h3>
             </div>
-            <Link to="/frontend_challenges/faq-accordion/">FAQ accordion</Link>
-            <p>TODO Here I can put links to the resources and this page can be further styled</p>
-        </>
+            <div className={styles.links}>
+                <div className={styles.problem}>
+                    <h3>FAQ accordion problem</h3>
+                    <p>
+                        In this challenge, you'll build an FAQ accordion. This is an extremely common front-end pattern, 
+                        so it's an excellent opportunity to get some practice in!
+                    </p>
+                    
+                    <Link to="/frontend_challenges/faq-accordion/">FAQ accordion page</Link>
+                    <div></div>
+                    <a href="https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz">Problem source task</a>
+                </div>
+                
+            </div>
+        </div>
     )
 }
 

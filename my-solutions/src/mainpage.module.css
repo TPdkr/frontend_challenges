@@ -1,7 +1,23 @@
+.mainPage{
+    font-family: 'Courier New';
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
 .title{
-    margin: 1rem 5rem
+    margin: 1rem 0 3rem 0
 }
 
 .title h1{
     font-size: 4 rem;
+    margin-bottom: 0.5rem;
+}
+
+.title h3{
+    color: gray
+}
+
+.problem p{
+ margin-bottom: 0.5rem;
+ margin-top: 0.5rem;
 }
