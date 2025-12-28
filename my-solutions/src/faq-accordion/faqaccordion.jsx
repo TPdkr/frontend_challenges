@@ -35,11 +35,11 @@ function FaqAccordion(){
         </div>
             
     );
-
+    //<!--<img src={backgroundDesktop} className={styles.backdrop}/>-->
 
     return (
         <div className={styles.faqaccordion}>
-            <img src={backgroundDesktop} className={styles.backdrop}/>
+            
             <div className={styles.window}>
                 <div className={styles.header}>
                     <img src={star}/>
@@ -62,7 +62,7 @@ function AccordionItem({label, children}){
     }
 
     return (
-        <div className={styles.item}>
+        <div className={styles.item} key={label}>
             <div className={styles.itemLabel} onClick={()=> setState(!isOpen)}>
                 <b>{label}</b>
                 {
