@@ -1,0 +1,97 @@
+:local(.faqaccordion){
+    --White: hsl(0, 100%, 100%);
+    --Purple100: hsl(275, 100%, 97%);
+    --Purple600: hsl(292, 16%, 49%);
+    --Purple950: hsl(292, 42%, 14%);
+
+    background-color: var(--Purple100);
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+*{
+    color: var(--Purple950)
+}
+
+.faqaccordion{
+    font-family: 'Work Sans';
+    position: relative;
+    padding-bottom: 30rem;
+    background-color: var(--Purple100);
+}
+
+.backdrop{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+/*
+===============================================================================
+FAQs Window pop up thingy
+===============================================================================
+*/
+
+.window{
+    /*position*/
+    position: relative;
+    z-index: 10;
+    padding: 40px;
+    max-width: 35rem;
+    margin:  -8rem auto 0 auto;
+    /*contents and visuals*/
+    background-color: var(--White);
+    border-radius: 1rem;
+    box-shadow: 10px 0 30px var(--Purple600);    
+}
+
+/*
+===============================================================================
+FAQs Header
+===============================================================================
+*/
+
+.faqaccordion h1{
+    font-size: 3rem;
+}
+
+.header{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+/*
+===============================================================================
+FAQs items properties
+===============================================================================
+*/
+.item{
+    margin: 1rem 0;
+}
+
+.itemLabel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    font-size: 1rem;
+    text-justify: center;
+}
+
+.itemLabel b{
+    text-justify: center;
+    text-align: center;
+}
+
+.itemContent p{
+    color: var(--Purple600)
+}
+
+.sep{
+    border-bottom: 0.1rem solid  var(--Purple100);
+}
