@@ -50,6 +50,12 @@
     color: gray
 }
 
+.links{
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+
 .problem p{
  margin-bottom: 0.5rem;
  margin-top: 0.5rem;

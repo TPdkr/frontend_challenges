@@ -1,0 +1,73 @@
+:local(.inputForm){
+    --PrimaryRed: hsl(0, 100%, 74%) ;
+    --PrimaryGreen: hsl(154, 59%, 51%);
+
+    --AccentPurple: hsl(248, 32%, 49%);
+
+    --NeutralGray: hsl(249, 10%, 26%) 
+    --NeutralPurple: hsl(246, 25%, 77%)
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: 
+        url('./fonts/Poppins-Black.ttf'),
+        url('./fonts/Poppins-BlackItalic.ttf'),
+        url('./fonts/Poppins-Bold.ttf'),
+        url('./fonts/Poppins-BoldItalic.ttf'),
+        url('./fonts/Poppins-ExtraBold.ttf'),
+        url('./fonts/Poppins-ExtraBoldItalic.ttf'),
+        url('./fonts/Poppins-ExtraLight.ttf'),
+        url('./fonts/Poppins-ExtraLightItalic.ttf'),
+        url('./fonts/Poppins-Italic.ttf'),
+        url('./fonts/Poppins-Light.ttf'),
+        url('./fonts/Poppins-LightItalic.ttf'),
+        url('./fonts/Poppins-Medium.ttf'),
+        url('./fonts/Poppins-MediumItalic.ttf'),
+        url('./fonts/Poppins-Regular.ttf'),
+        url('./fonts/Poppins-SemiBold.ttf'),
+        url('./fonts/Poppins-SemiBoldItalic.ttf'),
+        url('./fonts/Poppins-Thin.ttf'),
+        url('./fonts/Poppins-ThinItalic.ttf')
+        ;
+}
+
+.inputForm{
+    min-height: 55rem;
+
+    /*layout for the content*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    /*style*/
+    background-image: url("./images/bg-intro-desktop.png");
+    background-color: var(--PrimaryRed);
+    font-family: 'Poppins';
+    color: white;
+    padding: 0 8rem;
+}
+
+.inputForm h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.inputForm p{
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.inputForm div{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    border: red 0.5rem solid;
+}
+
+.header{
+    display: flex;
+    gap: 2rem;
+    text-align: left;
+}

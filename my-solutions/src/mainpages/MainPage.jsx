@@ -27,7 +27,17 @@ function Mainpage() {
                     <div></div>
                     <a href="https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz">Problem source task</a>
                 </div>
-                
+
+                <div className={styles.problem}>
+                    <h3>Intro component with sign-up form</h3>
+                    <p>
+                        Practice building out a sign-up form complete with client-side validation using JavaScript.
+                    </p>
+                    
+                    <Link to="/frontend_challenges/input-form/">Input form page</Link>
+                    <div></div>
+                    <a href="https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1">Problem source task</a>
+                </div>
             </div>
         </div>
     )
