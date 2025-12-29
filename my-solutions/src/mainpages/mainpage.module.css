@@ -9,9 +9,27 @@
     margin: 1rem 0 3rem 0
 }
 
+.logoRow{
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 37rem){
+    .logoRow{
+        flex-direction: column;
+    }
+
+    .logoRow img{
+        max-width: 20rem;
+        min-height: 10rem;
+        align-self: center;
+    }
+}
+
 .title h1{
     font-size: 4 rem;
-    margin-bottom: 0.5rem;
 }
 
 .title h3{
