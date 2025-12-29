@@ -7,7 +7,7 @@ function Mainpage() {
         <div className={styles.mainPage}>
             <div className={styles.title}>
                 <div className={styles.logoRow}>
-                    <img src={reactLogo}/>
+                    <img src={reactLogo} className={styles.rotating}/>
                     <h1>Hello! Fancy seeing some solutions?</h1>
                 </div>
                 <h3>
