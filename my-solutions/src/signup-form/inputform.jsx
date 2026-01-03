@@ -4,12 +4,19 @@ import { useState } from "react";
 function InputForm(){
     const [inputs, setInputs] = useState({});
 
-    const handleChange = (e) => {
+    function handleChange(e) {
         const name = e.target.name;
         const value = e.target.value;
 
         setInputs(values => ({...values, [name]:value}));
     }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        alert(`Hello dear ${inputs.firstname} ${inputs.lastname}`);
+    }
+
+
 
     return (
         <div className={styles.inputForm}>
@@ -29,7 +36,7 @@ function InputForm(){
 
                     </div>
                     <div className={styles.window}> 
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <InputField 
                             name="firstname" 
                             value={inputs.firstname}
@@ -49,6 +56,7 @@ function InputForm(){
                             value={inputs.email}
                             handleChange={handleChange}
                             placeholder="Email Address"
+                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             ></InputField>
 
                             <InputField 
@@ -56,6 +64,8 @@ function InputForm(){
                             value={inputs.password}
                             handleChange={handleChange}
                             placeholder="Password"
+                            type="password"
+                            pattern="^[a-zA-Z0-9]{5,}$"
                             ></InputField>
 
                             <input className={styles.inputField} type="submit" value="CLAIM YOUR FREE TRIAL"/>
@@ -71,18 +81,37 @@ function InputForm(){
     );
 }
 
-function InputField({name, value, handleChange, placeholder, pattern="/^[a-zA-Z]+$/"}){
+function InputField({name, value, handleChange, placeholder, pattern="^[a-zA-Z]+$", type="text"}){
+    const pattern_adj = new RegExp(pattern);
+
+    const [message, setMessage]= useState("");
+
     return (
-        <input 
-            type="text" 
-            name={name}
-            value={value} 
-            onChange={handleChange}
-            className={styles.inputField}
-            placeholder={placeholder}
-            required
-            pattern={pattern}
-        />
+        <div>
+            <input 
+                type={type} 
+                name={name}
+                value={value} 
+                onChange={(e)=>{
+                    if (!e.target.value){
+                        setMessage(`${placeholder} cannot be empty`);
+                    } else if (!pattern_adj.test(e.target.value)) {
+                        setMessage(`Looks like this is not ${placeholder}`);
+                    } else {
+                        setMessage("");
+                    }
+                    
+                    handleChange(e);
+                }}
+                className={`${styles.inputField} ${(message)? styles.error : ""}`}
+                placeholder={placeholder}
+                required
+                pattern={pattern}
+            />
+            <div className={styles.errorMessage}>
+                {message}
+            </div>
+        </div>
     );
 }
 

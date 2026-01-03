@@ -12,30 +12,6 @@
     --shadow: rgba(var(--NeutralGrayrgb), 0.2);
 }
 
-/*@font-face {
-    font-family: 'Poppins';
-    src: 
-        url('./fonts/Poppins-Black.ttf'),
-        url('./fonts/Poppins-BlackItalic.ttf'),
-        url('./fonts/Poppins-Bold.ttf'),
-        url('./fonts/Poppins-BoldItalic.ttf'),
-        url('./fonts/Poppins-ExtraBold.ttf'),
-        url('./fonts/Poppins-ExtraBoldItalic.ttf'),
-        url('./fonts/Poppins-ExtraLight.ttf'),
-        url('./fonts/Poppins-ExtraLightItalic.ttf'),
-        url('./fonts/Poppins-Italic.ttf'),
-        url('./fonts/Poppins-Light.ttf'),
-        url('./fonts/Poppins-LightItalic.ttf'),
-        url('./fonts/Poppins-Medium.ttf'),
-        url('./fonts/Poppins-MediumItalic.ttf'),
-        url('./fonts/Poppins-Regular.ttf'),
-        url('./fonts/Poppins-SemiBold.ttf'),
-        url('./fonts/Poppins-SemiBoldItalic.ttf'),
-        url('./fonts/Poppins-Thin.ttf'),
-        url('./fonts/Poppins-ThinItalic.ttf')
-        ;
-}*/
-
 .inputForm{
     display: grid;
     /*style*/
@@ -44,6 +20,8 @@
     font-family: 'Poppins';
     color: white;
     padding: 2rem;
+
+    min-height: 100vh;
     
 }
 
@@ -54,6 +32,16 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin: auto;
+}
+
+@media (max-width: 37rem){
+    .inputForm{
+        padding: 1rem;
+    }
+
+    .content{
+        grid-template-columns: 1fr;
+    }
 }
 
 .content div{
@@ -84,13 +72,38 @@
     text-align: left;
 }
 
+@media (max-width: 37rem){
+    .header{
+        text-align: center;
+    }
+}
+
+/*
+===============================================================================
+ISLAND
+===============================================================================
+*/
+
 .island{
     background-color: var(--AccentPurple);
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem  0 var(--shadow);
-    text-align: center;
+    text-align: center;transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
+
+.island:hover{
+    transform: translateY(0.25rem);
+    box-shadow: 0 0rem  0 var(--shadow);
+}
+
+
+/*
+===============================================================================
+WINDOW
+===============================================================================
+*/
 
 .window{
     background-color: white;
@@ -98,6 +111,12 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem  0 var(--shadow);
     color: var(--NeutralGray);
+}
+
+@media (max-width: 37rem){
+    .window{
+        padding: 1.5rem;
+    }
 }
 
 .window form{
@@ -116,7 +135,8 @@ INPUT FIELD
 ===============================================================================
 */
 
-.inputField[type=text]{
+/*text input*/
+.inputField{
     padding: 1rem;
     border-radius: 0.5rem;
     width: auto;
@@ -124,14 +144,35 @@ INPUT FIELD
     font-weight: 600;
 }
 
-.inputField[type=text]:focus{
+.inputField:focus{
     border-color: var(--AccentPurple);
 }
 
-.inputField[type=text]::placeholder{
+
+.inputField.error{
+    border-color: var(--PrimaryRed);
+    color: var(--PrimaryRed);
+    background-image: url("./images/icon-error.svg");
+    background-position: right 5% center;
+    background-repeat: no-repeat;
+}
+
+.inputField.error:focus{
+    border-color: var(--PrimaryRed);
+    color: var(--PrimaryRed);
+}
+
+.inputField::placeholder{
     font-weight: 600;
 }
 
+.errorMessage{
+    color: var(--PrimaryRed);
+    text-align: right;
+    font-size: 0.7rem;
+}
+
+/*submit field*/
 .inputField[type=submit]{
     background-color: var(--PrimaryGreen);
     color: white;
